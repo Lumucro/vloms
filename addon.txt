@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"			"Vloms"
+	"version"		"0.1"
+	"up_date"		"08/04/2015"
+	"author_name"	"Jake"
+	"author_email"	"N/A"
+	"author_url"	"N/A"
+	"info"			"EXP Mod v2.0, in a sense"
+	"override"		"0"
+}
