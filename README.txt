@@ -26,9 +26,6 @@ Leave credit to original author at all times
 I (author of this addon) am not liable for any damage, problems, etc this addon may or may not cause to you, your computer, your potato or anything else
 
 
-You know, the usual crap.
-
-
 -------------------------------
 ------------CONFIG-------------
 -------------------------------

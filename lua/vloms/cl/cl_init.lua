@@ -11,6 +11,7 @@ include('vloms/cl/cl_net.lua')
 include('vloms/cl/cl_perks.lua')
 include('vloms/cl/ui/fonts.lua')
 include('vloms/cl/ui/cl_hud.lua')
+include('vloms/cl/ui/cl_perksmenu.lua')
 
 // Include the modules, too
 

@@ -31,5 +31,6 @@ end)
 net.Receive( "VPerks", function(length)
 
 	Vloms.Perks = net.ReadTable()
+	table.SortByMember( Vloms.Perks, 'lvl', function(a, b) return tonumber(a) > tonumber(b) end )
 
 end)
