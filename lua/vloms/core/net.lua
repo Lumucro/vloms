@@ -1,8 +1,11 @@
 util.AddNetworkString("VSendStats")
 util.AddNetworkString("VExperienceReceived")
 util.AddNetworkString("VLevelUp")
+util.AddNetworkString("VPerks")
 
 local pm = FindMetaTable("Player")
+
+// XP and Level
 
 function pm:VNetStats()
 
@@ -28,6 +31,16 @@ function pm:VNetLevelUp( level )
 
 	net.Start( "VLevelUp" )
 		net.WriteInt( level, 16 )
+	net.Send( self )
+
+end
+
+// PERKS
+
+function pm:VNetPerks()
+
+	net.Start( "VPerks" )
+		net.WriteTable( Vloms.Perks )
 	net.Send( self )
 
 end

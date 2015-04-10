@@ -1,6 +1,6 @@
-VlomsFont = surface.CreateFont( "VlomsFont", {
+surface.CreateFont( "VlomsFont", {
 	font = "Trebuchet MS",
-	size = 24,
+	size = 20,
 	weight = 900,
 	blursize = 0,
 	scanlines = 0,

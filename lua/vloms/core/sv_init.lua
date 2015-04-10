@@ -27,11 +27,29 @@ print('----------------------------------------\n')
 print('*Loading Core\n')
 
 Vinclude('vloms/core/data/' .. Vloms.DataType .. '.lua')
-Vinclude('vloms/core/level.lua')
+Vinclude('vloms/core/meta/level.lua')
+
+if (Vloms.PerksEnabled) then
+	Vinclude('vloms/core/meta/perks.lua')
+	Vinclude('vloms/core/perks.lua')
+end
+
 Vinclude('vloms/core/timers.lua')
 Vinclude('vloms/core/hooks.lua')
 Vinclude('vloms/core/modules.lua')
 Vinclude('vloms/core/net.lua')
+
+/*
+	PERKS
+*/
+
+print('\n*Loading Perks\n')
+
+if (Vloms.PerksEnabled) then
+	VLoadPerks()
+else
+	print('Perks disabled')
+end
 
 /*
 	UI

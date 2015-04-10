@@ -5,6 +5,9 @@ hook.Add('PlayerInitialSpawn', 'VLoadOnConnect', function(ply)
 	VLog('Loading data for ' .. ply:Nick() .. ' - ' .. ply:SteamID() .. ' (CONNECT)') --Log this
 	ply:VLoadXP()
 
+	ply:VFetchPerks()
+	ply:VNetPerks() --Networking perks
+
 end)
 
 // Save data on disconnect
@@ -25,5 +28,22 @@ hook.Add('ShutDown', 'VSaveOnShutdown', function()
 	for k,v in pairs(player.GetAll()) do
 		v:VSaveXP()
 	end
+
+end)
+
+// Perk stuff on spawn
+
+hook.Add('PlayerSpawn', 'VPerksOnSpawn', function(ply)
+
+	--Weird thing where player hasn't fully spawned yet and perks don't work, so add a 1 second delay
+	timer.Simple( 1, function()
+
+		for i=1,#ply.vlomsperks do
+			
+			Vloms.PerksFunctions[ply.vlomsperks[i]](ply)
+
+		end
+
+	end)
 
 end)

@@ -5,8 +5,8 @@ function VLoadModules()
 	for i=1,#dirs do
 
 		print( 'vloms/modules/' .. dirs[i] )
-		include( 'vloms/modules/' .. dirs[i] .. '/module.lua' )
 		AddCSLuaFile( 'vloms/modules/' .. dirs[i] .. '/module.lua' )
+		include( 'vloms/modules/' .. dirs[i] .. '/module.lua' )
 
 	end
 

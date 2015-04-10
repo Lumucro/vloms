@@ -1,3 +1,5 @@
+// XP and Level
+
 net.Receive( "VSendStats", function(length)
 
 	local plystats = net.ReadTable()
@@ -7,17 +9,29 @@ net.Receive( "VSendStats", function(length)
 
 	Vloms.XPReq = VCalcXPReq(Vloms.Level)
 
+	hook.Run( "VClGotStats" )
+
 end)
 
 net.Receive( "VExperienceReceived", function(length)
 
-	Vloms.XP = Vloms.XP + net.ReadInt( 16 )
-	print(Vloms.XP)
+	local xprec = net.ReadInt( 16 )
+	Vloms.XP = Vloms.XP + net.ReadInt( xprec )
+
+	hook.Run( "VClPlayerGotXP", xprec )
 
 end)
 
 net.Receive( "VLevelUp", function(length)
 
-	print('ding')
+	hook.Run( "VClPlayerLevelUp", net.ReadInt( 16 ) )
+
+end)
+
+// Perks
+
+net.Receive( "VPerks", function(length)
+
+	Vloms.Perks = net.ReadTable()
 
 end)

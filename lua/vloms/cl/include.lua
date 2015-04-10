@@ -7,6 +7,7 @@ end
 
 VAddLuaFile('vloms/cl/cl_init.lua')
 VAddLuaFile('vloms/cl/cl_net.lua')
+VAddLuaFile('vloms/cl/cl_perks.lua')
 VAddLuaFile('vloms/cl/ui/fonts.lua')
 VAddLuaFile('vloms/cl/ui/cl_hud.lua')
 

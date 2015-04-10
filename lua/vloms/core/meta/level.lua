@@ -68,9 +68,10 @@ function pm:VSetLevel( amount )
 
 	if amount < 1 then return end --No point
 
-	if (amount <= self.vlomslvl) then
+	if (amount <= tonumber(self.vlomslvl)) then
 		
 		self.vlomslvl = amount
+		self:VNetStats()
 
 	else
 
@@ -106,6 +107,8 @@ function pm:VLevelUp()
 
 	self.vlomslvl = self.vlomslvl + 1
 	self.vlomsxp = 0
+
+	self:VFetchPerks()
 
 	--Network it to the player
 	self:VNetStats()
