@@ -40,6 +40,14 @@ Vinclude('vloms/core/modules.lua')
 Vinclude('vloms/core/net.lua')
 
 /*
+	UI
+*/
+
+print('\n*Loading Clientside\n')
+
+include('vloms/cl/include.lua')
+
+/*
 	PERKS
 */
 
@@ -50,14 +58,6 @@ if (Vloms.PerksEnabled) then
 else
 	print('Perks disabled')
 end
-
-/*
-	UI
-*/
-
-print('\n*Loading Clientside\n')
-
-include('vloms/cl/include.lua')
 
 /*
 	MODULES
