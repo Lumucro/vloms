@@ -135,8 +135,6 @@ function ulx.stats( calling_ply, target_plys )
 			table.insert( affected_plys, v )
 	end
 
-	ulx.fancyLogAdmin( calling_ply, "#A is looking at the stats of #T", affected_plys )
-
 end
 
 local stats = ulx.command( CATEGORY_NAME, "ulx stats", ulx.stats, "!stats" )
@@ -162,8 +160,6 @@ function ulx.getstats( calling_ply )
 
 	calling_ply:PrintMessage(HUD_PRINTCONSOLE, '\n')
 
-	ulx.fancyLogAdmin( calling_ply, "#A is looking at everyone's stats" )
-
 end
 
 local getstats = ulx.command( CATEGORY_NAME, "ulx getstats", ulx.getstats, "!getstats" )
@@ -183,8 +179,6 @@ function ulx.viewlevel( calling_ply, target_plys )
 		 	calling_ply:ChatPrint(v:Nick() .. ' is level ' .. v.vlomslvl)
 			table.insert( affected_plys, v )
 	end
-
-	ulx.fancyLogAdmin( calling_ply, "#A is looking at the level of #T", affected_plys )
 
 end
 
