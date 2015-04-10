@@ -1,17 +1,22 @@
-FEATURES
+Features:
 
--Easy to config
--Automagically grant XP
--ULX Integration
--Modular system
--Perks
+-Leveling system (Possible to change required XP formula)
+-Dynamic perks system (Examples included)
+-Dynamic modules system (Examples included)
+-Easy to configure (Change XP rate, etc)
+-HUD with 2 choices (Or add your own via a module)
+-Perks menu (Clientside)
+-Simple logging system (Can be disabled)
+-ULX Integration (Admin commands)
 
-UPCOMING FEATURES
+Planned:
 
--None as of yet
+-XP rate per usergroup
+-Perks per usergroup
 
-Suggestions? Github! :)
+Suggestions? Contact me on Github or make a discussion on the Steam Workshop! :)
 
+https://github.com/Lumucro/vloms/
 
 
 Some notes

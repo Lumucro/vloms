@@ -1,5 +1,5 @@
 Vloms = {}
-Vloms.Version = '0.2'
+Vloms.Version = '1.0'
 
 Vloms.DataType = 'pdata' --How to save / load data
 
