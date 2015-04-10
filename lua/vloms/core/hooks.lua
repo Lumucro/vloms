@@ -39,8 +39,9 @@ hook.Add('PlayerSpawn', 'VPerksOnSpawn', function(ply)
 	timer.Simple( 1, function()
 
 		for i=1,#ply.vlomsperks do
-			
+		
 			if Vloms.Perks[ply.vlomsperks[i]]['cat'] then
+				print('doing something')
 				Vloms.PerksFunctions[ply.vlomsperks[i]](ply)
 			end
 

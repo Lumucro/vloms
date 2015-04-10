@@ -5,7 +5,7 @@ function pm:VFetchPerks()
 	for i=1,#Vloms.Perks do
 		
 		if (self.vlomsperks == nil) then self.vlomsperks = {} end --Safety
-		if (table.HasValue(self.vlomsperks, Vloms.Perks[i]['name'])) then return end --Already has this perk loaded
+		if (table.HasValue(self.vlomsperks, i)) then return end --Already has this perk loaded
 
 		if (tonumber(Vloms.Perks[i]['lvl']) <= tonumber(self.vlomslvl)) then
 			

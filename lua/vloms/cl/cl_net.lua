@@ -14,7 +14,7 @@ end)
 net.Receive( "VExperienceReceived", function(length)
 
 	local xprec = net.ReadInt( 16 )
-	Vloms.XP = Vloms.XP + net.ReadInt( xprec )
+	Vloms.XP = Vloms.XP + xprec
 
 	hook.Run( "VClPlayerGotXP", xprec )
 
