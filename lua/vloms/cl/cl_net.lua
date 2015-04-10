@@ -9,8 +9,6 @@ net.Receive( "VSendStats", function(length)
 
 	Vloms.XPReq = VCalcXPReq(Vloms.Level)
 
-	hook.Run( "VClGotStats" )
-
 end)
 
 net.Receive( "VExperienceReceived", function(length)
