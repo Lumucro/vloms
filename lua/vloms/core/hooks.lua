@@ -40,10 +40,28 @@ hook.Add('PlayerSpawn', 'VPerksOnSpawn', function(ply)
 
 		for i=1,#ply.vlomsperks do
 			
-			Vloms.PerksFunctions[ply.vlomsperks[i]](ply)
+			if Vloms.Perks[ply.vlomsperks[i]]['cat'] then
+				Vloms.PerksFunctions[ply.vlomsperks[i]](ply)
+			end
 
 		end
 
 	end)
+
+end)
+
+// Check for one-time perks on levelup
+
+hook.Add('VPlayerLevelUp', 'VLevelUpCheckPerks', function(ply, lvl)
+
+	for i=1,#Vloms.Perks do
+
+		if (!Vloms.Perks[i]['cat'] && lvl == Vloms.Perks[i]['lvl']) then 
+		
+			Vloms.PerksFunctions[i](ply)
+
+		end
+
+	end
 
 end)
