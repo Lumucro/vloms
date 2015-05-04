@@ -5,7 +5,17 @@ if (Vloms.AutoXP) then
 	timer.Create( 'VAutoXPTimer', Vloms.AutoXPInterval, 0, function()
 
 		for k,v in pairs(player.GetAll()) do
-			v:VGiveXP(Vloms.AutoXPAmount)
+
+			if (Vloms.GroupAutoXP && !Vloms.GroupAllXP) then
+
+				v:VGiveXP(math.Round(Vloms.AutoXPAmount * v:VGetXPRate(), 1))
+
+			else
+
+				v:VGiveXP(Vloms.AutoXPAmount)
+
+			end
+
 		end
 
 	end)

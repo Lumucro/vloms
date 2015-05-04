@@ -12,6 +12,10 @@ function pm:VGiveXP( amount )
 
 	if amount <= 0 then return end --No point
 
+	if Vloms.GroupAllXP then
+		amount = math.Round(amount * self:VGetXPRate(), 1)
+	end
+
 	//Give XP
 
 	local newxp = self.vlomsxp + amount
@@ -45,6 +49,18 @@ function pm:VSetXP( amount )
 	self:VNetStats()
 
 	VLog('Set xp of ' .. self:Nick() .. '(' .. self:SteamID() .. ')' .. ' to ' .. amount)
+
+end
+
+function pm:VGetXPRate()
+
+	for i=1, #Vloms.GroupXPRates do
+		if self:IsUserGroup(Vloms.GroupXPRates[i][1]) then
+			return Vloms.GroupXPRates[i][2]
+		end
+	end
+
+	return 1
 
 end
 
